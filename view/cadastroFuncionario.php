@@ -33,7 +33,7 @@
 
     <section class="conteudo-cadastro">
         <section class="conteudo-formulario-cadastro">
-            <form>
+            <form method="POST" action="../processamento/processamento.php">
                 <label>Cadastrar Funcionario</label>
                 <input type="text" placeholder="Nome" name="inputNomeFunc">
                 <input type="text" placeholder="Sobrenome" name="inputSobrenomeFunc">

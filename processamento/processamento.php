@@ -23,6 +23,26 @@ if(!empty($_POST['inputNome']) && !empty($_POST['inputSobrenome']) &&
       die();
 }
 
+//Cadastro de Funcionario
+if(!empty($_POST['inputNomeFunc']) && !empty($_POST['inputSobrenomeFunc']) && 
+   !empty($_POST['inputCPFFunc']) && !empty($_POST['inputDataNascFunc']) && 
+   !empty($_POST['inputTelefoneFunc']) && !empty($_POST['inputEmailFunc']) &&
+   !empty($_POST['inputSalarioFunc']))
+   {
+      $nome = $_POST['inputNomeFunc'];
+      $sobrenome = $_POST['inputSobrenomeFunc'];
+      $cpf = $_POST['inputCPFFunc'];
+      $dataNasc = $_POST['inputDataNascFunc'];
+      $telefone = $_POST['inputTelefoneFunc'];
+      $email = $_POST['inputEmailFunc'];
+      $salario = $_POST['inputSalarioFunc'];
+
+      inserirFuncionario($cpf, $nome, $sobrenome, $dataNasc, $telefone, $email, $salario);
+
+      header('Location:../view/cadastroFuncionario.php');
+      die();
+   }
+
 if(!empty($_POST['inputEmailLog']) && !empty($_POST['inputSenhaLog']))
 {
    $email = $_POST['inputEmailLog'];

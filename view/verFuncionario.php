@@ -5,7 +5,7 @@
     <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" type="text/css" href="../css/style.css">
     <link rel="icon" href="../img/logo.png" type="image/png">
-    <title>Xhopii - Ver Produtos</title>
+    <title>Xhopii - Ver Funcionários</title>
 </head>
 <body>
 
@@ -34,7 +34,21 @@
     <section class="conteudo-visualizar">
         <section class="conteudo-visualizar-box">
             <h1>Funcionários</h1>
-            <!-- INSERIR AQUI O RESULTADO DA CONSULTA POR FUNCIONÁRIOS -->
+            <?php
+            require_once '../processamento/funcoesBD.php';
+            $listaFuncionario = retornarFuncionario();
+            while ($funcionario = mysqli_fetch_assoc($listaFuncionario))
+            {
+                echo "<section class=\"conteudo-bloco\">";
+                echo "<h2>" . $funcionario["nome"] . " " . $funcionario["sobrenome"] . "</h2>";
+                echo "<p>CPF: " . $funcionario["cpf"] . "</p>";
+                echo "<p>Data Nascimento: " . $funcionario["dataNascimento"] . "</p>";
+                echo "<p>Telefone: " . $funcionario["telefone"] ."</P>";
+                echo "<p>E-mail: " . $funcionario["email"] . "</p>";
+                echo "<p>Salário: " . $funcionario["salario"] . "</p>";
+                echo "</section>";
+            }
+            ?>
         </section>
     </section>
 

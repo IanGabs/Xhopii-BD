@@ -49,5 +49,36 @@ function verificarClientePorEmail($email){
     }
 }
 
+function inserirFuncionario($cpf, $nome, $sobrenome, $dataNasc, $telefone, $email, $salario)
+{
+    $conexao = conectarBD();
+    $consulta = "INSERT INTO funcionario (cpf, nome, sobrenome, dataNascimento, telefone, email, salario) VALUES ('$cpf','$nome','$sobrenome','$dataNasc','$telefone','$email','$salario')";
 
+    mysqli_query($conexao, $consulta);
+}
+
+function verificarFuncionario($email)
+{
+    $conexao = conectarBD();
+    $consulta = "SELECT * FROM funcionario WHERE email = '$email'";
+    $resultado = mysqli_query($conexao, $consulta);
+
+    if (mysqli_num_rows($resultado) > 0)
+    {
+        return mysqli_fetch_assoc($resultado);
+    }
+    else
+    {
+        return false;
+    }
+
+}
+
+function retornarFuncionario()
+    {
+        $conexao = conectarBD();
+        $consulta = "SELECT * FROM funcionario";
+        $listaFuncionario = mysqli_query($conexao, $consulta);
+        return($listaFuncionario);
+    }
 ?>

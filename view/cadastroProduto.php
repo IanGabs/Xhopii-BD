@@ -33,12 +33,13 @@
 
     <section class="conteudo-cadastro">
         <section class="conteudo-formulario-cadastro">
-            <form>
+             <form method="POST" action="../processamento/processamento.php">
                 <label>Cadastrar Produto</label>
                 <input type="text" placeholder="Nome" name="inputNomeProd">
                 <input type="text" placeholder="Fabricante" name="inputFabricanteProd">
                 <input type="text" placeholder="Descrição" name="inputDescricaoProd">
                 <input type="text" placeholder="Valor" name="inputValorProd">
+                <input type="text" placeholder="Quantidade" name="inputQuantidadeProd">
                 <input id="botao" type="submit" value="Cadastrar">
             </form>
         </section>

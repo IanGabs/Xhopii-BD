@@ -17,7 +17,7 @@ function inserirCliente($cpf, $nome, $sobrenome, $dataNasc, $telefone, $email, $
 function verificarCliente($email, $senha){
     $conexao = conectarBD();
     $consulta = "SELECT * FROM cliente WHERE email = '$email' AND senha = '$senha'";
-    $resultado = mysqli_query($conexao, $consulta);
+    $resultado = mysqli_query($conexao, $consulta); 
 
     if (mysqli_num_rows($resultado) > 0)
     {
@@ -80,5 +80,22 @@ function retornarFuncionario()
         $consulta = "SELECT * FROM funcionario";
         $listaFuncionario = mysqli_query($conexao, $consulta);
         return($listaFuncionario);
+    }
+
+function inserirProduto($nome, $fabricante, $descricao, $valor, $quantidade)
+    {
+
+    $conexao = conectarBD();
+    $consulta = "INSERT INTO produto (nome, fabricante, descricao, valor, quantidade) VALUES ('$nome', '$fabricante', '$descricao', '$valor', '$quantidade')";
+    
+    mysqli_query($conexao, $consulta);
+    }
+
+function retornarProduto()
+    {
+    $conexao = conectarBD();
+    $consulta = "SELECT * FROM produto";
+    $listaProduto = mysqli_query($conexao, $consulta);
+    return($listaProduto);
     }
 ?>

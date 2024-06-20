@@ -60,7 +60,7 @@ if(!empty($_POST['inputEmailLog']) && !empty($_POST['inputSenhaLog']))
    }
    die();
 }
-
+//esqueci senha
 if ($_SERVER["REQUEST_METHOD"] == "POST")
 {
    if (isset($_POST['inputRedefinirLog']))
@@ -83,5 +83,20 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
    }
 }
 
+if(!empty($_POST['inputNomeProd']) && !empty($_POST['inputFabricanteProd']) && 
+   !empty($_POST['inputDescricaoProd']) && !empty($_POST['inputValorProd']) && 
+   !empty($_POST['inputQuantidadeProd'])){
 
+      $nome = $_POST['inputNomeProd'];
+      $fabricante = $_POST['inputFabricanteProd'];
+      $descricao = $_POST['inputDescricaoProd'];
+      $valor = $_POST['inputValorProd'];                                          
+      $quantidade = $_POST['inputQuantidadeProd'];
+
+      inserirProduto($nome, $fabricante, $descricao, $valor, $quantidade);
+      
+      header('Location:../view/cadastroProduto.php');
+      die();
+   }
+                 
 ?>

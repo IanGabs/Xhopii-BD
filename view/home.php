@@ -31,6 +31,17 @@
         </ul>
     </nav>
 
+    <div class="carousel-container">
+        <div class="carousel">
+            <img src="../img/produto1.jpg" alt="Imagem 1">
+            <img src="../img/produto2.jpg" alt="Imagem 2">
+            <img src="../img/produto3.jpg" alt="Imagem 3">
+        </div>
+        <button class="prev" onclick="prevSlide()">&#10094;</button>
+        <button class="next" onclick="nextSlide()">&#10095;</button>
+    </div>
+    <script src="script.js"></script>
+
     <section class="conteudo-home">
         <img src="../img/home.png">
     </section>

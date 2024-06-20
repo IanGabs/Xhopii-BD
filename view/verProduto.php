@@ -34,14 +34,28 @@
     <section class="conteudo-visualizar">
         <section class="conteudo-visualizar-box">
             <h1>Produtos</h1>
-            <!-- INSERIR AQUI O RESULTADO DA CONSULTA POR PRODUTOS -->
+            <?php
+            require_once '../processamento/funcoesBD.php';
+            $listaProduto = retornarProduto();
+            while ($produto = mysqli_fetch_assoc($listaProduto))
+            {
+                echo "<section class=\"conteudo-bloco\">";
+                echo "<h2>" . $produto["nome"] . "</h2>";
+                echo "<p>Fabricante: " . $produto["fabricante"] . "</p>";
+                echo "<p>Descrição: " . $produto["descricao"] . "</p>";
+                echo "<p>Valor: " . $produto["valor"] ."</P>";
+                echo "<p>Quantidade: " . $produto["quantidade"] . "</p>";
+                echo "</section>";
+            }
+            ?>
+             
         </section>
     </section>
 
     <footer class="rodape-login">
         <img src="../img/footer-login.png">
         <hr>
-        <p>© 2024 Xhopii. Todos os direitos reservados</p>
+        <p>© 2024 Xhopii. Todos os direitos reservados</p> 
     </footer>
 </body>
 </html>

@@ -85,15 +85,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
 
 if(!empty($_POST['inputNomeProd']) && !empty($_POST['inputFabricanteProd']) && 
    !empty($_POST['inputDescricaoProd']) && !empty($_POST['inputValorProd']) && 
-   !empty($_POST['inputQuantidadeProd'])){
+   !empty($_POST['inputQuantidadeProd']) && !empty($_FILES['inputImagemProd'])){
 
       $nome = $_POST['inputNomeProd'];
       $fabricante = $_POST['inputFabricanteProd'];
       $descricao = $_POST['inputDescricaoProd'];
       $valor = $_POST['inputValorProd'];                                          
       $quantidade = $_POST['inputQuantidadeProd'];
+      $imagem = $_FILES['inputImagemProd']['name'];
+      $imagem_temp = $_FILES['inputImagemProd']['tmp_name'];
+      $imagem_dir = "../uploads/"; // Diretório onde as imagens serão armazenadas
+      move_uploaded_file($imagem_temp, $imagem_dir . $imagem);
 
-      inserirProduto($nome, $fabricante, $descricao, $valor, $quantidade);
+      inserirProduto($nome, $fabricante, $descricao, $valor, $quantidade, $imagem);
       
       header('Location:../view/cadastroProduto.php');
       die();

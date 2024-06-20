@@ -11,7 +11,7 @@
 
     <header>
         <section id="cabecalho-logo">
-            <img src="../img/logo.png">
+            <img src="../img/logo.png" alt="Logo Xhopii">
             <h1>Xhopii</h1>
         </section>
         <section id="cabecalho-logout">
@@ -33,9 +33,9 @@
 
     <div class="carousel-container">
         <div class="carousel">
-            <img src="../img/produto1.jpg" alt="Imagem 1">
-            <img src="../img/produto2.jpg" alt="Imagem 2">
-            <img src="../img/produto3.jpg" alt="Imagem 3">
+            <img src="../img/coxi.png" alt="Imagem 1">
+            <img src="../img/natal.png" alt="Imagem 2">
+            <img src="../img/hi.png" alt="Imagem 3">
         </div>
         <button class="prev" onclick="prevSlide()">&#10094;</button>
         <button class="next" onclick="nextSlide()">&#10095;</button>
@@ -43,11 +43,33 @@
     <script src="script.js"></script>
 
     <section class="conteudo-home">
-        <img src="../img/home.png">
+        <img src="../img/frete.png" alt="Imagem de conteúdo principal">
+    </section>
+
+    <section class="conteudo-produtos">
+        <h2>Produtos</h2>
+        <div class="produtos-lista">
+            <?php
+            require_once '../processamento/funcoesBD.php';
+            $listaProduto = retornarProduto();
+            while ($produto = mysqli_fetch_assoc($listaProduto)) {
+                echo '<div class="produto">';
+                echo '<img src="../uploads/' . $produto['imagem'] . '" alt="' . $produto['nome'] . '">';
+                echo '<div class="detalhes">';
+                echo '<h3>' . $produto['nome'] . '</h3>';
+                echo '<p><strong>Fabricante:</strong> ' . $produto['fabricante'] . '</p>';
+                echo '<p><strong>Descrição:</strong> ' . $produto['descricao'] . '</p>';
+                echo '<p><strong>Valor:</strong> R$ ' . $produto['valor'] . '</p>';
+                echo '<p><strong>Quantidade:</strong> ' . $produto['quantidade'] . '</p>';
+                echo '</div>';
+                echo '</div>';
+            }
+            ?>
+        </div>
     </section>
 
     <footer class="rodape-login">
-        <img src="../img/footer-login.png">
+        <img src="../img/footer-login.png" alt="Imagem de rodapé">
         <hr>
         <p>© 2024 Xhopii. Todos os direitos reservados</p>
     </footer>

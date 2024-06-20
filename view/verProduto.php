@@ -39,13 +39,16 @@
             $listaProduto = retornarProduto();
             while ($produto = mysqli_fetch_assoc($listaProduto))
             {
-                echo "<section class=\"conteudo-bloco\">";
-                echo "<h2>" . $produto["nome"] . "</h2>";
-                echo "<p>Fabricante: " . $produto["fabricante"] . "</p>";
-                echo "<p>Descrição: " . $produto["descricao"] . "</p>";
-                echo "<p>Valor: " . $produto["valor"] ."</P>";
-                echo "<p>Quantidade: " . $produto["quantidade"] . "</p>";
-                echo "</section>";
+                echo '<div class="produto">';
+                echo '<img src="../uploads/' . $produto['imagem'] . '" alt="' . $produto['nome'] . '">';
+                echo '<div class="detalhes">';
+                echo '<h2>' . $produto['nome'] . '</h2>';
+                echo '<p><strong>Fabricante:</strong> ' . $produto['fabricante'] . '</p>';
+                echo '<p><strong>Descrição:</strong> ' . $produto['descricao'] . '</p>';
+                echo '<p><strong>Valor:</strong> R$ ' . $produto['valor'] . '</p>';
+                echo '<p><strong>Quantidade:</strong> ' . $produto['quantidade'] . '</p>';
+                echo '</div>';
+                echo '</div>';
             }
             ?>
              

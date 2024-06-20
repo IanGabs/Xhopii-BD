@@ -33,13 +33,14 @@
 
     <section class="conteudo-cadastro">
         <section class="conteudo-formulario-cadastro">
-             <form method="POST" action="../processamento/processamento.php">
+            <form method="POST" action="../processamento/processamento.php" enctype="multipart/form-data">
                 <label>Cadastrar Produto</label>
-                <input type="text" placeholder="Nome" name="inputNomeProd">
-                <input type="text" placeholder="Fabricante" name="inputFabricanteProd">
-                <input type="text" placeholder="Descrição" name="inputDescricaoProd">
-                <input type="text" placeholder="Valor" name="inputValorProd">
-                <input type="text" placeholder="Quantidade" name="inputQuantidadeProd">
+                <input type="text" placeholder="Nome" name="inputNomeProd" required>
+                <input type="text" placeholder="Fabricante" name="inputFabricanteProd" required>
+                <input type="text" placeholder="Descrição" name="inputDescricaoProd" required>
+                <input type="text" placeholder="Valor" name="inputValorProd" required>
+                <input type="text" placeholder="Quantidade" name="inputQuantidadeProd" required>
+                <input type="file" name="inputImagemProd" accept="image/*" required>
                 <input id="botao" type="submit" value="Cadastrar">
             </form>
         </section>

@@ -552,15 +552,16 @@ header #cabecalho-logout a{
     position: relative;
     width: 80%;
     max-width: 800px;
-    height: 500px; 
     overflow: hidden;
-    display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
+    display: flex;
+    margin: auto;
 }
 
 .carousel {
     display: flex;
+    align-items: center;
     transition: transform 0.5s ease-in-out;
 }
 
@@ -588,4 +589,44 @@ button.prev {
 
 button.next {
     right: 10px;
+}
+
+.conteudo-visualizar .conteudo-visualizar-box {
+    width: 80%;
+    margin-left: 10%;
+    background-color: rgb(240, 240, 240);
+    display: flex;
+    flex-wrap: wrap; 
+    justify-content: space-around; 
+}
+
+.produtos-lista {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 20px;
+}
+.produto {
+    width: calc(33.33% - 20px); 
+    margin-bottom: 20px;
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    overflow: hidden;
+}
+.produto img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+.detalhes {
+    padding: 10px;
+}
+.detalhes h3 {
+    margin-top: 0;
+    font-size: 18px;
+}
+.detalhes p {
+    margin: 5px 0;
 }

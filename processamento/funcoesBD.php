@@ -82,11 +82,11 @@ function retornarFuncionario()
         return($listaFuncionario);
     }
 
-function inserirProduto($nome, $fabricante, $descricao, $valor, $quantidade)
+function inserirProduto($nome, $fabricante, $descricao, $valor, $quantidade, $imagem)
     {
 
     $conexao = conectarBD();
-    $consulta = "INSERT INTO produto (nome, fabricante, descricao, valor, quantidade) VALUES ('$nome', '$fabricante', '$descricao', '$valor', '$quantidade')";
+    $consulta = "INSERT INTO produto (nome, fabricante, descricao, valor, quantidade, imagem) VALUES ('$nome', '$fabricante', '$descricao', '$valor', '$quantidade', '$imagem')";
     
     mysqli_query($conexao, $consulta);
     }

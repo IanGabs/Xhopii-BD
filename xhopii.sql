@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 19/06/2024 às 05:01
--- Versão do servidor: 10.4.32-MariaDB
--- Versão do PHP: 8.2.12
+-- Tempo de geração: 20/06/2024 às 04:16
+-- Versão do servidor: 10.4.28-MariaDB
+-- Versão do PHP: 8.2.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -73,6 +73,31 @@ CREATE TABLE `funcionario` (
 INSERT INTO `funcionario` (`cpf`, `nome`, `sobrenome`, `dataNascimento`, `telefone`, `email`, `salario`) VALUES
 ('12345678900', 'João', 'Costa', '2000-10-31', '18999999999', 'joaojones@gmail.com', '5000'),
 ('54777777777', 'João', 'Costa', '2000-10-31', '18999999999', 'joaojones@gmail.com', '5000');
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura para tabela `produto`
+--
+
+CREATE TABLE `produto` (
+  `nome` varchar(50) NOT NULL,
+  `fabricante` varchar(50) NOT NULL,
+  `descricao` varchar(100) NOT NULL,
+  `valor` varchar(50) NOT NULL,
+  `quantidade` varchar(100) NOT NULL,
+  `imagem` blob NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Despejando dados para a tabela `produto`
+--
+
+INSERT INTO `produto` (`nome`, `fabricante`, `descricao`, `valor`, `quantidade`, `imagem`) VALUES
+('gdfhj,mn.;', 'dzfxgvchbjnkm', 'dzxfcgvhbjnm3456', '43', '46', 0x70726f6475746f312e6a7067),
+('Camargo', 'Camargos', 'Camargo!!!', '18', '35', 0x696d616765202831292e706e67),
+('Camargo', 'Amarg', 'eryer', '46', '00', 0x70726f6475746f352e6a7067),
+('Scott', 'Scotts', 'Robos', '18', '35', 0x73746f632e77656270);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
